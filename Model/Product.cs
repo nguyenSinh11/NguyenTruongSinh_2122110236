@@ -1,17 +1,15 @@
-﻿namespace NguyenTruongSinh_2122110236.Model
+﻿using LamWebNe.Model;
+
+public class Product : BaseEntity
 {
-    public class Product
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+    public string Description { get; set; } = null!;     // ✅ đã có
+    public decimal Price { get; set; }
+    public string? ImageUrl { get; set; } = null!;        // ✅ đã có
+    public int StockQuantity { get; set; }               // ✅ có luôn
+    public bool Published { get; set; }                  // ✅ có luôn
 
-        public string Name { get; set; }
-
-        public double Price { get; set; }
-
-        public string Image { get;set; }
-
-        public int CategoryId { get; set; }   // Khóa ngoại liên kết với Category
-
-        public Category Category { get; set; } // Liên kết với Category
-    }
+    public int CategoryId { get; set; }
+    public Category? Category { get; set; }
 }

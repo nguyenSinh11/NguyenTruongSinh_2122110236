@@ -1,12 +1,13 @@
-﻿namespace NguyenTruongSinh_2122110236.Model
+﻿using System.Text.Json.Serialization;
+
+namespace LamWebNe.Model
 {
-    public class Category
+    public class Category : BaseEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-
-        public ICollection<Product> Products { get; set; } 
-
+        public string Name { get; set; } = null!;
+        [JsonIgnore] // ⬅️ THÊM DÒNG NÀY
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
+
 }
